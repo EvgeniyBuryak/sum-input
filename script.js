@@ -4,15 +4,14 @@ function sumInput() {
     let input;
     let sum = 0;
 
-    for (let i = 0; ; i++) {
+    while (true) {
         input = prompt("Введите значение", '');
 
-        if (!input) { // так как "0" строка содержит 0, значит она не пустая - true, а в нашем условие false
+        if (!input || !isFinite(input)) { // так как "0" строка содержит 0, значит она не пустая - true, а в нашем условие false
             break;
         }
 
-        sumArray[i] = +input;
-        continue;
+        sumArray.push(input);
     }
 
     for (let value of sumArray) {
